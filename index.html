@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Map</title>
+	<!--<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+
+<script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script> -->
+<link rel="stylesheet" href="leaflet/leaflet.css" /> 
+<script src="leaflet/leaflet.js"></script> 
+<style>
+#map {
+width: 960px;
+height: 500px;
+}
+</style>
+  </head>
+  <body>
+    <div id="map"></div>
+<script>
+
+   var map = L.map('map',{scrollWheelZoom:false}).setView([43.64701, -79.39425], 15);
+
+    L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+	
+	var marker = L.marker([43.64703, -79.39427]).addTo(map);
+	var circle = L.circle([43.64701, -79.39425], {
+    color: 'red',
+    fillColor: '#f03',
+    fillOpacity: 0.5,
+    radius: 500
+}).addTo(map);
+marker.bindPopup("<b>Hello world!</b><br>I am a popup.").openPopup();
+circle.bindPopup("I am a circle.");
+
+var popup = L.popup();
+
+function onMapClick(e) {
+    popup
+        .setLatLng(e.latlng)
+        .setContent("You clicked the map at " + e.latlng.toString())
+        .openOn(map);
+}
+
+map.on('click', onMapClick);
+
+    /*var map = L.map('map').setView([43.64701, -79.39425], 3);
+
+    L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    L.tileLayer.wms("http://mesonet.agron.iastate.edu/cgi-bin/wms/nexrad/n0r.cgi", {
+    	layers: 'nexrad-n0r-900913',
+        format: 'image/png',
+        transparent: true,
+        attribution: "Weather data © 2012 IEM Nexrad"
+    }).addTo(map);
+*/
+</script>
+ 
+
+</script>
+  </body>
+</html>
