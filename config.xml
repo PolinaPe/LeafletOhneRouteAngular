@@ -26,11 +26,10 @@ xmlns:gap="http://phonegap.com/ns/1.0">
 	<content src="index.html" />
 	<access origin="*" />
 	<allow-intent href="http://*/*" />
-	<allow-intent href="geo:*" />
-
-
+<allow-intent href="https://*/*" />
+<allow-intent href="geo:*" />
+<plugin name="cordova-plugin-geolocation" spec="2.1.0"  />
 <plugin name="cordova-plugin-whitelist" spec="1.1.0" />
-<plugin spec="https://github.com/apache/cordova-plugin-geolocation.git" source="git" />
 
 
 
