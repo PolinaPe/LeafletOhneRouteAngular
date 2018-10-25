@@ -30,7 +30,7 @@ xmlns:gap="http://phonegap.com/ns/1.0">
 
 
 <plugin name="cordova-plugin-whitelist" spec="1.1.0" />
-<plugin name="cordova-plugin-geolocation" spec="1.1.0" />
+<plugin name="Geolocation" value="org.apache.cordova.GeoBroker" />
 
 
 
